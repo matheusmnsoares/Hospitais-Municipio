@@ -91,11 +91,11 @@ def filtrar_hospitais_por_municipio(hospitais, municipio_desejado, pags):
 
 def main():
     estado = input("Selecione o estado (sigla): ").strip().upper()
-    municipio = input("Digite o nome do município: ").strip()
-    
     if estado not in estados_codigos_ibge:
         print("Estado inválido")
         return
+    municipio = input("Digite o nome do município: ").strip()
+    
     print(estados_codigos_ibge[estado])
     codigo_estado = estados_codigos_ibge[estado]
     hospitais, pags = obter_hospitais_por_estado(codigo_estado, 1)
